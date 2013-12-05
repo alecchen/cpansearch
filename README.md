@@ -40,6 +40,13 @@ install from macport:
     $ perl Makefile.PL
     $ make install
 
+install with brew:
+    
+    $ export PKG_CONFIG_PATH=/usr/local/Library/ENV/pkgconfig/{your_osx_version}
+    $ brew install glib
+    $ make
+    $ make install
+
 ## USAGE
 
 --fetch [uri] | -f [uri]
