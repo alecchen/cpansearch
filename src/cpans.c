@@ -38,6 +38,11 @@ static struct option long_options[] = {
 
 int main(int argc, char **argv)
 {
+    if (argc < 2) {
+      help ();
+      return 0;
+    }
+
     setvbuf( stderr , 0, _IONBF, 0);
     setvbuf( stdout , 0, _IONBF, 0);
 
@@ -90,6 +95,7 @@ int main(int argc, char **argv)
             // update package list
             return 0;
 
+        case '?':
         case 'h':
             help ();
             return 0;
