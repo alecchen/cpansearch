@@ -26,11 +26,11 @@ $(PROG): $(OBJS)
 		$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(PROG)
 		@echo "----------------"
 		@echo "When you upgrade cpans, please update the source data again with -f option:"
-		@echo "   cpans --fetch http://www.cpan.org/"
+		@echo "   cpans -f"
 		@echo "----------------"
 
 install: $(PROG)
-		./cpans --fetch http://www.cpan.org/
+		./cpans -f
 		mkdir -p /usr/bin
 		cp -v $(PROG) /usr/bin
 

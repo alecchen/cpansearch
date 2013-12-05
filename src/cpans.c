@@ -26,8 +26,8 @@ static int option_index = 0;
 static int thisopt = 0;
 
 static struct option long_options[] = {
-  { "fetch"     , required_argument, 0 , 'f' },
-  { "init"      , required_argument, 0 , 'f' },
+  { "fetch"     , optional_argument, 0 , 'f' },
+  { "init"      , optional_argument, 0 , 'f' },
   { "update"    , no_argument      , 0 , 'u' },
   { "recent"    , no_argument      , 0 , 'r' },
   { "help"      , no_argument      , 0 , 'h' },
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 
     int optbind = 0;
     while ((thisopt =
-            getopt_long (argc, argv, "if?urhnlv", long_options,
+            getopt_long (argc, argv, "if::urhvn", long_options,
                         &option_index)) != -1)
     {
 
